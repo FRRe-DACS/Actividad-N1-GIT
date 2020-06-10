@@ -29,7 +29,7 @@ namespace SwaggerDemo
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1.0", new Info { Title = "My Demo API", Version = "1.0" });
+                c.SwaggerDoc("v1.1", new Info { Title = "My Demo API", Version = "1.1" });
                 c.IncludeXmlComments(System.IO.Path.Combine(System.AppContext.BaseDirectory, "SwaggerDemo.xml"));
             });
         }
@@ -51,7 +51,7 @@ namespace SwaggerDemo
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1.0/swagger.json", "My Demo API (V 1.0)");
+                c.SwaggerEndpoint("/swagger/v1.1/swagger.json", "My Demo API (V 1.1)");
             });
             app.UseMvc();
         }
